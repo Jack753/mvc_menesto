@@ -30,7 +30,8 @@ import it.corso.mvc.universita.model.factory.StudCdlFactory;
 public class UniversitaController {
 
 	private Logger logger = Logger.getLogger(UniversitaController.class);
-
+	//prova 
+	
 	@Autowired
 	ICorsiDiLaureaDao corsiDiLaureaDao;
 	@Autowired
