@@ -28,7 +28,7 @@ import it.corso.mvc.universita.model.factory.StudCdlFactory;
 @Controller
 @RequestMapping("/uni")
 public class UniversitaController {
-	
+	  
 	private Logger logger = Logger.getLogger(UniversitaController.class);
 	@Autowired
 	ICorsiDiLaureaDao corsiDiLaureaDao;
