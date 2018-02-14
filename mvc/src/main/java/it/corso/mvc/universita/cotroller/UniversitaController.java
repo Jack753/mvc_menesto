@@ -87,7 +87,7 @@ public class UniversitaController {
 			ModelAndView modelAndView = new ModelAndView("selectCorsoById", "corso", cdl);
 			return modelAndView;
 		}
-
+//ciao
 		CorsoDiLaurea risultato = corsiDiLaureaDao.readCdlById(cdl.getCdlId());
 		ModelAndView modelAndView = new ModelAndView("selectCorsoById", "corso", risultato);
 		return modelAndView;
