@@ -6,19 +6,14 @@ import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-import it.corso.mvc.model.book.Book;
 import it.corso.mvc.universita.dao.interfaces.ICorsiDiLaureaDao;
 import it.corso.mvc.universita.dao.interfaces.IEsamiDao;
 import it.corso.mvc.universita.dao.interfaces.IMaterieDao;
@@ -34,8 +29,9 @@ import it.corso.mvc.universita.model.factory.StudCdlFactory;
 
 public class UniversitaController {
 
-	// private Logger logger = Logger.getLogger(UniversitaController.class);
-
+	private Logger logger = Logger.getLogger(UniversitaController.class);
+	//prova 
+	
 	@Autowired
 	ICorsiDiLaureaDao corsiDiLaureaDao;
 	@Autowired
@@ -51,10 +47,11 @@ public class UniversitaController {
 
 	@RequestMapping(value = "/listacorsi", method = RequestMethod.GET)
 	public ModelAndView getCorsi() {
-
 		List<CorsoDiLaurea> cdl = corsiDiLaureaDao.readCdlAll();
 
 		ModelAndView modelAndView = new ModelAndView("cdlView", "corsi", cdl);
+		logger.info("lista corsi " + cdl.get(0).getCdlNome());
+
 		return modelAndView;
 	}
 
